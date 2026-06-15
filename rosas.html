@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Feliz Cumpleaños Ingeniera</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;min-height:100vh;background:radial-gradient(ellipse at 50% 30%,#1a0020 0%,#0d000f 60%,#050005 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;font-family:Georgia,serif;overflow-x:hidden}
+canvas#bg{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:18px 8px 30px}
+svg.ramo{width:480px;max-width:97vw}
+.txt{margin-top:16px;text-align:center}
+.l1{font-size:2rem;font-weight:bold;letter-spacing:3px;background:linear-gradient(120deg,#ff9de2,#ffec80,#ff69b4,#d4a8ff,#ffb3e6);background-size:250%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:sg 4s linear infinite,glow 2.5s ease-in-out infinite alternate}
+.l2{display:block;font-size:1.3rem;letter-spacing:8px;margin-top:4px;background:linear-gradient(90deg,#d4a8ff,#ff9de2,#ffec80,#a8d4ff);background-size:300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:sg 5s linear infinite}
+@keyframes sg{0%{background-position:0%}100%{background-position:300%}}
+@keyframes glow{from{filter:drop-shadow(0 0 6px #ff69b488)}to{filter:drop-shadow(0 0 22px #ff69b4cc) drop-shadow(0 0 44px #d4a8ff55)}}
+.star{position:fixed;border-radius:50%;animation:tw var(--d) ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.08;transform:scale(.5)}to{opacity:1;transform:scale(1.6)}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div id="starsC" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1"></div>
+
+<div class="wrap">
+<svg class="ramo" viewBox="0 0 480 570" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <radialGradient id="p_crimson" cx="38%" cy="32%" r="62%">
+    <stop offset="0%" stop-color="#ff6a8a"/><stop offset="45%" stop-color="#cc1144"/><stop offset="100%" stop-color="#7a0020"/>
+  </radialGradient>
+  <radialGradient id="p_crimson2" cx="60%" cy="30%" r="58%">
+    <stop offset="0%" stop-color="#e8557a"/><stop offset="100%" stop-color="#8b0030"/>
+  </radialGradient>
+  <radialGradient id="p_hotpink" cx="40%" cy="28%" r="65%">
+    <stop offset="0%" stop-color="#ffaad4"/><stop offset="50%" stop-color="#ee3399"/><stop offset="100%" stop-color="#990055"/>
+  </radialGradient>
+  <radialGradient id="p_blush" cx="42%" cy="35%" r="60%">
+    <stop offset="0%" stop-color="#fff0f6"/><stop offset="55%" stop-color="#ffb3d4"/><stop offset="100%" stop-color="#e06090"/>
+  </radialGradient>
+  <radialGradient id="p_coral" cx="40%" cy="30%" r="62%">
+    <stop offset="0%" stop-color="#ffb89a"/><stop offset="50%" stop-color="#e85040"/><stop offset="100%" stop-color="#9a1f10"/>
+  </radialGradient>
+  <radialGradient id="p_purple" cx="42%" cy="32%" r="60%">
+    <stop offset="0%" stop-color="#ddb8f8"/><stop offset="50%" stop-color="#9933cc"/><stop offset="100%" stop-color="#4a0078"/>
+  </radialGradient>
+  <radialGradient id="p_mauve" cx="45%" cy="30%" r="62%">
+    <stop offset="0%" stop-color="#f4d0ff"/><stop offset="55%" stop-color="#cc88ee"/><stop offset="100%" stop-color="#7a3399"/>
+  </radialGradient>
+  <radialGradient id="p_salmon" cx="38%" cy="35%" r="60%">
+    <stop offset="0%" stop-color="#ffd4c8"/><stop offset="50%" stop-color="#ff8866"/><stop offset="100%" stop-color="#cc3322"/>
+  </radialGradient>
+  <radialGradient id="p_magenta" cx="40%" cy="30%" r="62%">
+    <stop offset="0%" stop-color="#ffa0cc"/><stop offset="50%" stop-color="#cc0077"/><stop offset="100%" stop-color="#660033"/>
+  </radialGradient>
+  <radialGradient id="p_pink2" cx="44%" cy="34%" r="58%">
+    <stop offset="0%" stop-color="#ffe0ee"/><stop offset="50%" stop-color="#ff66aa"/><stop offset="100%" stop-color="#aa2255"/>
+  </radialGradient>
+  <radialGradient id="ctr_dark" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#ffccdd"/><stop offset="50%" stop-color="#cc3366"/><stop offset="100%" stop-color="#550011"/>
+  </radialGradient>
+  <radialGradient id="ctr_pink" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#fff0f8"/><stop offset="55%" stop-color="#ffaadd"/><stop offset="100%" stop-color="#cc4488"/>
+  </radialGradient>
+  <radialGradient id="ctr_pur" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#f0e0ff"/><stop offset="55%" stop-color="#cc88ff"/><stop offset="100%" stop-color="#6600aa"/>
+  </radialGradient>
+  <radialGradient id="ctr_coral" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#ffe8d8"/><stop offset="55%" stop-color="#ff9966"/><stop offset="100%" stop-color="#aa3300"/>
+  </radialGradient>
+  <linearGradient id="stem" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#1a5c1a"/><stop offset="50%" stop-color="#2e8b2e"/><stop offset="100%" stop-color="#145014"/>
+  </linearGradient>
+  <linearGradient id="env1" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#ffe8f4"/><stop offset="100%" stop-color="#ffb3d9"/>
+  </linearGradient>
+  <linearGradient id="env2" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#f0e0ff"/><stop offset="100%" stop-color="#c99af0"/>
+  </linearGradient>
+</defs>
+
+<!-- ENVOLTORIO -->
+<polygon points="110,360 370,360 405,570 75,570" fill="url(#env1)" stroke="#f080b0" stroke-width="1.2"/>
+<polygon points="145,360 335,360 365,570 115,570" fill="url(#env2)" opacity="0.75"/>
+<line x1="110" y1="360" x2="75" y2="570" stroke="#e070a0" stroke-width="0.8"/>
+<line x1="370" y1="360" x2="405" y2="570" stroke="#e070a0" stroke-width="0.8"/>
+<line x1="228" y1="360" x2="225" y2="570" stroke="#d4a8ff" stroke-width="0.6" opacity="0.5"/>
+<line x1="300" y1="360" x2="305" y2="570" stroke="#d4a8ff" stroke-width="0.6" opacity="0.5"/>
+
+<!-- LAZO -->
+<path d="M240,362 Q210,345 195,355 Q185,368 210,370 Q230,370 240,362Z" fill="#ff4488"/>
+<path d="M240,362 Q270,345 285,355 Q295,368 270,370 Q250,370 240,362Z" fill="#ff4488"/>
+<ellipse cx="240" cy="364" rx="11" ry="8" fill="#ff88bb"/>
+<path d="M240,364 Q235,380 230,390" stroke="#ff4488" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M240,364 Q245,380 250,390" stroke="#ff4488" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+<!-- TALLOS -->
+<path d="M240,195 Q242,280 238,360" stroke="url(#stem)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+<path d="M195,220 Q200,290 208,360" stroke="url(#stem)" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M285,220 Q278,290 270,360" stroke="url(#stem)" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M155,250 Q165,310 180,360" stroke="url(#stem)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<path d="M320,250 Q315,310 300,360" stroke="url(#stem)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<path d="M118,275 Q135,325 158,360" stroke="url(#stem)" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M360,275 Q345,325 325,360" stroke="url(#stem)" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M92,300 Q112,340 140,360" stroke="url(#stem)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<path d="M388,300 Q372,340 345,360" stroke="url(#stem)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+<!-- HOJAS -->
+<path d="M225,285 Q200,268 188,275 Q180,288 200,292 Q215,293 225,285Z" fill="#2a7a2a" stroke="#1a5a1a" stroke-width="0.8"/>
+<path d="M225,285 Q218,270 225,263" stroke="#1a5a1a" stroke-width="0.6" fill="none"/>
+<path d="M258,278 Q282,262 293,270 Q300,282 280,286 Q265,287 258,278Z" fill="#2e8b2e" stroke="#1a5a1a" stroke-width="0.8"/>
+<path d="M258,278 Q265,263 258,256" stroke="#1a5a1a" stroke-width="0.6" fill="none"/>
+<path d="M178,308 Q152,292 142,300 Q135,313 158,316 Q172,316 178,308Z" fill="#238a23" stroke="#1a5a1a" stroke-width="0.8"/>
+<path d="M298,305 Q324,290 333,298 Q340,310 318,313 Q304,314 298,305Z" fill="#2d8b2d" stroke="#1a5a1a" stroke-width="0.8"/>
+<path d="M145,330 Q120,316 112,323 Q106,335 128,338 Q142,338 145,330Z" fill="#1e7a1e" stroke="#154a15" stroke-width="0.7"/>
+<path d="M340,328 Q365,314 373,321 Q378,333 355,336 Q341,336 340,328Z" fill="#2a8a2a" stroke="#154a15" stroke-width="0.7"/>
+<path d="M240,315 Q235,330 230,340" stroke="#1a5a1a" stroke-width="1.5" fill="none"/>
+<path d="M240,315 Q250,326 256,336" stroke="#1a5a1a" stroke-width="1.2" fill="none" opacity="0.7"/>
+
+<!-- ROSA 1 - CENTRO - CRIMSON GRANDE -->
+<g transform="translate(240,148)">
+  <path d="M0,0 C-28,-8 -48,8 -42,28 C-36,46 -14,50 0,42 C14,50 36,46 42,28 C48,8 28,-8 0,0Z" fill="#7a0020" opacity="0.6"/>
+  <path d="M0,0 C8,-32 30,-42 42,-28 C54,-14 46,10 28,18 C36,-2 28,-22 0,0Z" fill="#8b0025" opacity="0.6"/>
+  <path d="M0,0 C-8,-32 -30,-42 -42,-28 C-54,-14 -46,10 -28,18 C-36,-2 -28,-22 0,0Z" fill="#8b0025" opacity="0.6"/>
+  <path d="M0,2 C-22,-4 -38,10 -32,28 C-26,44 -8,46 0,38 C6,32 4,20 0,2Z" fill="url(#p_crimson)"/>
+  <path d="M0,2 C22,-4 38,10 32,28 C26,44 8,46 0,38 C-6,32 -4,20 0,2Z" fill="url(#p_crimson2)"/>
+  <path d="M0,2 C-12,-28 8,-44 22,-36 C36,-28 32,-8 18,2 C12,-8 8,-22 0,2Z" fill="url(#p_crimson)"/>
+  <path d="M0,2 C12,-28 -8,-44 -22,-36 C-36,-28 -32,-8 -18,2 C-12,-8 -8,-22 0,2Z" fill="url(#p_crimson2)"/>
+  <path d="M0,4 C-14,0 -24,12 -20,26 C-16,38 -4,38 0,30 C2,24 2,14 0,4Z" fill="url(#p_crimson)"/>
+  <path d="M0,4 C14,0 24,12 20,26 C16,38 4,38 0,30 C-2,24 -2,14 0,4Z" fill="url(#p_crimson2)"/>
+  <path d="M0,4 C-6,-18 6,-28 14,-22 C22,-16 18,-4 8,4 C6,-4 4,-14 0,4Z" fill="url(#p_crimson)"/>
+  <path d="M0,4 C6,-18 -6,-28 -14,-22 C-22,-16 -18,-4 -8,4 C-6,-4 -4,-14 0,4Z" fill="url(#p_crimson2)"/>
+  <path d="M0,6 C-8,2 -14,10 -10,20 C-7,28 0,26 0,18 C0,14 0,10 0,6Z" fill="url(#p_crimson)"/>
+  <path d="M0,6 C8,2 14,10 10,20 C7,28 0,26 0,18 C0,14 0,10 0,6Z" fill="url(#p_crimson2)"/>
+  <path d="M0,6 C-3,-8 4,-14 8,-10 C12,-6 8,2 4,6 C3,2 2,-4 0,6Z" fill="#ff6a8a"/>
+  <circle cx="0" cy="10" r="9" fill="url(#ctr_dark)"/>
+  <circle cx="0" cy="10" r="5" fill="#ffccdd" opacity="0.7"/>
+  <ellipse cx="-4" cy="-18" rx="4" ry="2.5" fill="white" opacity="0.35" transform="rotate(-20)"/>
+</g>
+
+<!-- ROSA 2 - IZQUIERDA - HOT PINK -->
+<g transform="translate(188,185)">
+  <path d="M0,0 C-22,-6 -38,8 -33,24 C-28,40 -10,43 0,35 C10,43 28,40 33,24 C38,8 22,-6 0,0Z" fill="#880044" opacity="0.55"/>
+  <path d="M0,0 C6,-26 24,-36 35,-22 C44,-10 36,12 20,16 C28,-2 22,-20 0,0Z" fill="#880044" opacity="0.55"/>
+  <path d="M0,0 C-6,-26 -24,-36 -35,-22 C-44,-10 -36,12 -20,16 C-28,-2 -22,-20 0,0Z" fill="#880044" opacity="0.55"/>
+  <path d="M0,2 C-18,-3 -30,9 -25,24 C-20,37 -6,38 0,30 C6,38 20,37 25,24 C30,9 18,-3 0,2Z" fill="url(#p_hotpink)"/>
+  <path d="M0,2 C-10,-22 6,-36 18,-28 C28,-20 24,-4 12,4 C10,-6 6,-20 0,2Z" fill="url(#p_hotpink)"/>
+  <path d="M0,2 C10,-22 -6,-36 -18,-28 C-28,-20 -24,-4 -12,4 C-10,-6 -6,-20 0,2Z" fill="url(#p_hotpink)"/>
+  <path d="M0,4 C-10,0 -18,10 -14,22 C-10,32 -2,31 0,24 C2,31 10,32 14,22 C18,10 10,0 0,4Z" fill="url(#p_hotpink)"/>
+  <path d="M0,4 C-4,-14 6,-22 12,-16 C18,-10 14,0 6,4 C5,-3 3,-12 0,4Z" fill="#ffaad4"/>
+  <path d="M0,4 C4,-14 -6,-22 -12,-16 C-18,-10 -14,0 -6,4 C-5,-3 -3,-12 0,4Z" fill="#ffaad4"/>
+  <circle cx="0" cy="8" r="7" fill="url(#ctr_pink)"/>
+  <circle cx="0" cy="8" r="4" fill="#ffe8f6" opacity="0.65"/>
+  <ellipse cx="-3" cy="-14" rx="3" ry="2" fill="white" opacity="0.3" transform="rotate(-15)"/>
+</g>
+
+<!-- ROSA 3 - DERECHA - CORAL -->
+<g transform="translate(292,185)">
+  <path d="M0,0 C-22,-6 -38,8 -33,24 C-28,40 -10,43 0,35 C10,43 28,40 33,24 C38,8 22,-6 0,0Z" fill="#882200" opacity="0.55"/>
+  <path d="M0,0 C6,-26 24,-36 35,-22 C44,-10 36,12 20,16 C28,-2 22,-20 0,0Z" fill="#882200" opacity="0.55"/>
+  <path d="M0,0 C-6,-26 -24,-36 -35,-22 C-44,-10 -36,12 -20,16 C-28,-2 -22,-20 0,0Z" fill="#882200" opacity="0.55"/>
+  <path d="M0,2 C-18,-3 -30,9 -25,24 C-20,37 -6,38 0,30 C6,38 20,37 25,24 C30,9 18,-3 0,2Z" fill="url(#p_coral)"/>
+  <path d="M0,2 C-10,-22 6,-36 18,-28 C28,-20 24,-4 12,4 C10,-6 6,-20 0,2Z" fill="url(#p_coral)"/>
+  <path d="M0,2 C10,-22 -6,-36 -18,-28 C-28,-20 -24,-4 -12,4 C-10,-6 -6,-20 0,2Z" fill="url(#p_salmon)"/>
+  <path d="M0,4 C-10,0 -18,10 -14,22 C-10,32 -2,31 0,24 C2,31 10,32 14,22 C18,10 10,0 0,4Z" fill="url(#p_salmon)"/>
+  <path d="M0,4 C-4,-14 6,-22 12,-16 C18,-10 14,0 6,4 C5,-3 3,-12 0,4Z" fill="#ffd4c0"/>
+  <path d="M0,4 C4,-14 -6,-22 -12,-16 C-18,-10 -14,0 -6,4 C-5,-3 -3,-12 0,4Z" fill="#ffd4c0"/>
+  <circle cx="0" cy="8" r="7" fill="url(#ctr_coral)"/>
+  <circle cx="0" cy="8" r="4" fill="#fff0e8" opacity="0.65"/>
+  <ellipse cx="-3" cy="-14" rx="3" ry="2" fill="white" opacity="0.3" transform="rotate(-15)"/>
+</g>
+
+<!-- ROSA 4 - FAR LEFT - PURPLE -->
+<g transform="translate(148,222)">
+  <path d="M0,0 C-18,-5 -30,7 -26,20 C-22,32 -8,35 0,28 C8,35 22,32 26,20 C30,7 18,-5 0,0Z" fill="#380055" opacity="0.6"/>
+  <path d="M0,0 C5,-22 20,-30 28,-18 C36,-8 29,9 16,13 C22,-2 18,-16 0,0Z" fill="#380055" opacity="0.6"/>
+  <path d="M0,0 C-5,-22 -20,-30 -28,-18 C-36,-8 -29,9 -16,13 C-22,-2 -18,-16 0,0Z" fill="#380055" opacity="0.6"/>
+  <path d="M0,2 C-14,-2 -24,8 -20,20 C-16,30 -4,31 0,24 C4,31 16,30 20,20 C24,8 14,-2 0,2Z" fill="url(#p_purple)"/>
+  <path d="M0,2 C-8,-18 6,-28 15,-21 C22,-14 18,-2 8,3 C7,-5 4,-16 0,2Z" fill="url(#p_purple)"/>
+  <path d="M0,2 C8,-18 -6,-28 -15,-21 C-22,-14 -18,-2 -8,3 C-7,-5 -4,-16 0,2Z" fill="url(#p_mauve)"/>
+  <path d="M0,4 C-8,0 -14,8 -10,18 C-7,25 0,24 0,18 C0,24 7,25 10,18 C14,8 8,0 0,4Z" fill="url(#p_mauve)"/>
+  <path d="M0,4 C-3,-10 4,-17 9,-12 C13,-8 10,0 4,4 C3,-2 2,-9 0,4Z" fill="#e8c8ff"/>
+  <path d="M0,4 C3,-10 -4,-17 -9,-12 C-13,-8 -10,0 -4,4 C-3,-2 -2,-9 0,4Z" fill="#e8c8ff"/>
+  <circle cx="0" cy="7" r="6" fill="url(#ctr_pur)"/>
+  <circle cx="0" cy="7" r="3.5" fill="#f8eeff" opacity="0.65"/>
+</g>
+
+<!-- ROSA 5 - FAR RIGHT - MAGENTA -->
+<g transform="translate(333,222)">
+  <path d="M0,0 C-18,-5 -30,7 -26,20 C-22,32 -8,35 0,28 C8,35 22,32 26,20 C30,7 18,-5 0,0Z" fill="#550033" opacity="0.6"/>
+  <path d="M0,0 C5,-22 20,-30 28,-18 C36,-8 29,9 16,13 C22,-2 18,-16 0,0Z" fill="#550033" opacity="0.6"/>
+  <path d="M0,0 C-5,-22 -20,-30 -28,-18 C-36,-8 -29,9 -16,13 C-22,-2 -18,-16 0,0Z" fill="#550033" opacity="0.6"/>
+  <path d="M0,2 C-14,-2 -24,8 -20,20 C-16,30 -4,31 0,24 C4,31 16,30 20,20 C24,8 14,-2 0,2Z" fill="url(#p_magenta)"/>
+  <path d="M0,2 C-8,-18 6,-28 15,-21 C22,-14 18,-2 8,3 C7,-5 4,-16 0,2Z" fill="url(#p_magenta)"/>
+  <path d="M0,2 C8,-18 -6,-28 -15,-21 C-22,-14 -18,-2 -8,3 C-7,-5 -4,-16 0,2Z" fill="url(#p_pink2)"/>
+  <path d="M0,4 C-8,0 -14,8 -10,18 C-7,25 0,24 0,18 C0,24 7,25 10,18 C14,8 8,0 0,4Z" fill="url(#p_pink2)"/>
+  <path d="M0,4 C-3,-10 4,-17 9,-12 C13,-8 10,0 4,4 C3,-2 2,-9 0,4Z" fill="#ffc0dd"/>
+  <path d="M0,4 C3,-10 -4,-17 -9,-12 C-13,-8 -10,0 -4,4 C-3,-2 -2,-9 0,4Z" fill="#ffc0dd"/>
+  <circle cx="0" cy="7" r="6" fill="url(#ctr_pink)"/>
+  <circle cx="0" cy="7" r="3.5" fill="#fff0f8" opacity="0.65"/>
+</g>
+
+<!-- ROSA 6 - BLUSH PEQUEÑA IZQ -->
+<g transform="translate(115,262)">
+  <path d="M0,0 C-14,-4 -24,5 -20,16 C-16,26 -5,27 0,21 C5,27 16,26 20,16 C24,5 14,-4 0,0Z" fill="#883355" opacity="0.55"/>
+  <path d="M0,0 C4,-18 16,-24 22,-14 C28,-6 22,8 12,10 C17,-1 13,-14 0,0Z" fill="#883355" opacity="0.55"/>
+  <path d="M0,0 C-4,-18 -16,-24 -22,-14 C-28,-6 -22,8 -12,10 C-17,-1 -13,-14 0,0Z" fill="#883355" opacity="0.55"/>
+  <path d="M0,2 C-10,-1 -18,6 -15,16 C-12,24 -3,24 0,18 C3,24 12,24 15,16 C18,6 10,-1 0,2Z" fill="url(#p_blush)"/>
+  <path d="M0,2 C-6,-14 5,-21 12,-15 C18,-9 14,0 6,2 C5,-4 3,-12 0,2Z" fill="url(#p_blush)"/>
+  <path d="M0,2 C6,-14 -5,-21 -12,-15 C-18,-9 -14,0 -6,2 C-5,-4 -3,-12 0,2Z" fill="url(#p_blush)"/>
+  <path d="M0,4 C-6,1 -10,7 -7,15 C-4,20 0,19 0,14 C0,19 4,20 7,15 C10,7 6,1 0,4Z" fill="url(#p_blush)"/>
+  <circle cx="0" cy="6" r="5" fill="url(#ctr_pink)"/>
+  <circle cx="0" cy="6" r="2.8" fill="white" opacity="0.5"/>
+</g>
+
+<!-- ROSA 7 - DARK RED PEQUEÑA DER -->
+<g transform="translate(368,262)">
+  <path d="M0,0 C-14,-4 -24,5 -20,16 C-16,26 -5,27 0,21 C5,27 16,26 20,16 C24,5 14,-4 0,0Z" fill="#600010" opacity="0.6"/>
+  <path d="M0,0 C4,-18 16,-24 22,-14 C28,-6 22,8 12,10 C17,-1 13,-14 0,0Z" fill="#600010" opacity="0.6"/>
+  <path d="M0,0 C-4,-18 -16,-24 -22,-14 C-28,-6 -22,8 -12,10 C-17,-1 -13,-14 0,0Z" fill="#600010" opacity="0.6"/>
+  <path d="M0,2 C-10,-1 -18,6 -15,16 C-12,24 -3,24 0,18 C3,24 12,24 15,16 C18,6 10,-1 0,2Z" fill="url(#p_crimson)"/>
+  <path d="M0,2 C-6,-14 5,-21 12,-15 C18,-9 14,0 6,2 C5,-4 3,-12 0,2Z" fill="url(#p_crimson)"/>
+  <path d="M0,2 C6,-14 -5,-21 -12,-15 C-18,-9 -14,0 -6,2 C-5,-4 -3,-12 0,2Z" fill="url(#p_crimson2)"/>
+  <path d="M0,4 C-6,1 -10,7 -7,15 C-4,20 0,19 0,14 C0,19 4,20 7,15 C10,7 6,1 0,4Z" fill="url(#p_crimson2)"/>
+  <circle cx="0" cy="6" r="5" fill="url(#ctr_dark)"/>
+  <circle cx="0" cy="6" r="2.8" fill="#ffccdd" opacity="0.5"/>
+</g>
+
+<!-- ROSA 8 - PINK EXTREMO IZQ -->
+<g transform="translate(82,300)">
+  <path d="M0,0 C-12,-3 -20,5 -17,14 C-14,22 -4,23 0,18 C4,23 14,22 17,14 C20,5 12,-3 0,0Z" fill="#770033" opacity="0.55"/>
+  <path d="M0,0 C3,-15 13,-20 19,-12 C24,-5 19,6 10,9 C14,-1 11,-12 0,0Z" fill="#770033" opacity="0.55"/>
+  <path d="M0,0 C-3,-15 -13,-20 -19,-12 C-24,-5 -19,6 -10,9 C-14,-1 -11,-12 0,0Z" fill="#770033" opacity="0.55"/>
+  <path d="M0,2 C-8,0 -14,6 -12,14 C-9,20 -2,20 0,15 C2,20 9,20 12,14 C14,6 8,0 0,2Z" fill="url(#p_pink2)"/>
+  <path d="M0,2 C-5,-11 4,-17 10,-12 C15,-7 11,1 5,2 C4,-3 2,-10 0,2Z" fill="url(#p_pink2)"/>
+  <path d="M0,2 C5,-11 -4,-17 -10,-12 C-15,-7 -11,1 -5,2 C-4,-3 -2,-10 0,2Z" fill="url(#p_hotpink)"/>
+  <path d="M0,4 C-5,1 -8,6 -6,12 C-4,17 0,16 0,12 C0,16 4,17 6,12 C8,6 5,1 0,4Z" fill="url(#p_hotpink)"/>
+  <circle cx="0" cy="5" r="4.5" fill="url(#ctr_pink)"/>
+</g>
+
+<!-- ROSA 9 - MAUVE EXTREMO DER -->
+<g transform="translate(400,300)">
+  <path d="M0,0 C-12,-3 -20,5 -17,14 C-14,22 -4,23 0,18 C4,23 14,22 17,14 C20,5 12,-3 0,0Z" fill="#5a0066" opacity="0.55"/>
+  <path d="M0,0 C3,-15 13,-20 19,-12 C24,-5 19,6 10,9 C14,-1 11,-12 0,0Z" fill="#5a0066" opacity="0.55"/>
+  <path d="M0,0 C-3,-15 -13,-20 -19,-12 C-24,-5 -19,6 -10,9 C-14,-1 -11,-12 0,0Z" fill="#5a0066" opacity="0.55"/>
+  <path d="M0,2 C-8,0 -14,6 -12,14 C-9,20 -2,20 0,15 C2,20 9,20 12,14 C14,6 8,0 0,2Z" fill="url(#p_mauve)"/>
+  <path d="M0,2 C-5,-11 4,-17 10,-12 C15,-7 11,1 5,2 C4,-3 2,-10 0,2Z" fill="url(#p_mauve)"/>
+  <path d="M0,2 C5,-11 -4,-17 -10,-12 C-15,-7 -11,1 -5,2 C-4,-3 -2,-10 0,2Z" fill="url(#p_purple)"/>
+  <path d="M0,4 C-5,1 -8,6 -6,12 C-4,17 0,16 0,12 C0,16 4,17 6,12 C8,6 5,1 0,4Z" fill="url(#p_purple)"/>
+  <circle cx="0" cy="5" r="4.5" fill="url(#ctr_pur)"/>
+</g>
+
+<!-- Destellos -->
+<circle cx="240" cy="128" r="2.5" fill="white" opacity="0.7"/>
+<circle cx="243" cy="132" r="1.5" fill="white" opacity="0.5"/>
+<circle cx="186" cy="168" r="2" fill="white" opacity="0.6"/>
+<circle cx="290" cy="167" r="2" fill="white" opacity="0.6"/>
+<circle cx="147" cy="205" r="1.8" fill="white" opacity="0.55"/>
+<circle cx="332" cy="205" r="1.8" fill="white" opacity="0.55"/>
+<circle cx="113" cy="246" r="1.5" fill="white" opacity="0.5"/>
+<circle cx="367" cy="246" r="1.5" fill="white" opacity="0.5"/>
+<circle cx="80" cy="284" r="1.3" fill="white" opacity="0.45"/>
+<circle cx="399" cy="284" r="1.3" fill="white" opacity="0.45"/>
+<ellipse cx="220" cy="140" rx="2" ry="1.2" fill="white" opacity="0.4"/>
+<ellipse cx="170" cy="176" rx="1.8" ry="1" fill="white" opacity="0.35"/>
+<ellipse cx="310" cy="175" rx="1.8" ry="1" fill="white" opacity="0.35"/>
+</svg>
+
+<div class="txt">
+  <div class="l1">✨ Feliz Cumpleaños ✨</div>
+  <span class="l2">I N G E N I E R A</span>
+</div>
+</div>
+
+<script>
+const sc=document.getElementById('starsC');
+for(let i=0;i<90;i++){
+  const s=document.createElement('div');
+  s.className='star';
+  const sz=Math.random()*3.5+.8;
+  const cols=['#ffcce0','#d4a8ff','#fffacd','#ffb3e6','#c9f0ff','#ffffff','#ffd6ff'];
+  const c=cols[Math.floor(Math.random()*cols.length)];
+  const d=(Math.random()*3.5+1).toFixed(2)+'s';
+  s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;background:${c};--d:${d};animation-delay:${(Math.random()*4).toFixed(2)}s;`;
+  sc.appendChild(s);
+}
+const cv=document.getElementById('bg'),ctx=cv.getContext('2d');
+let W,H,pts=[];
+function rsz(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;}
+rsz();window.addEventListener('resize',rsz);
+const pcols=['#ff69b4','#ffb3d9','#d4a8ff','#fff0a0','#ffcce0','#ffffff','#e0b0ff','#ffc0cb','#ffaadd'];
+for(let i=0;i<140;i++){
+  pts.push({x:Math.random()*1400,y:Math.random()*900,r:Math.random()*2.8+.5,
+    c:pcols[Math.floor(Math.random()*pcols.length)],
+    vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,
+    a:Math.random(),da:(Math.random()*.022+.004)*(Math.random()<.5?1:-1)});
+}
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  for(const p of pts){
+    p.x+=p.vx;p.y+=p.vy;p.a+=p.da;
+    if(p.a>=1||p.a<=0)p.da=-p.da;
+    if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+    if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+    ctx.save();
+    ctx.globalAlpha=Math.max(0,Math.min(1,p.a));
+    ctx.fillStyle=p.c;ctx.shadowColor=p.c;ctx.shadowBlur=8;
+    const r=p.r,r2=r*.38;
+    ctx.beginPath();
+    ctx.moveTo(p.x,p.y-r);ctx.lineTo(p.x+r2,p.y-r2);
+    ctx.lineTo(p.x+r,p.y);ctx.lineTo(p.x+r2,p.y+r2);
+    ctx.lineTo(p.x,p.y+r);ctx.lineTo(p.x-r2,p.y+r2);
+    ctx.lineTo(p.x-r,p.y);ctx.lineTo(p.x-r2,p.y-r2);
+    ctx.closePath();ctx.fill();ctx.restore();
+  }
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body>
+</html>
